@@ -1,0 +1,356 @@
+$(function () {
+    var sizeArr = ['13.5*13.5cm', '17*17cm', '21*21cm', '27*40.5cm'];// 尺寸信息
+    var pepoleArr = ['4-5', '8-10', '12-15', '35-40'];//适合用餐人数信息
+    var dinnerArr = ['5', '10', '15', '40']//餐具信息
+    var detailsData = null;
+    var $basicPrice;    //基准价格信息
+    var state;          //加入购物车状态
+    var goods_id = getGoods_id;
+    var user_id = Number(sessionStorage.getItem('user_id'));
+    console.log('用户的id是', user_id)
+    //获取商品数据
+    getGoods();
+    function getGoods() {
+        $.ajax({
+            method: 'get',
+            url: '/getGoodsMsg',
+            data: {
+                goods_id: goods_id,
+            }
+        })
+            .done(function (data) {
+                $basicPrice = Number(data[0].goods_detail_price)
+                renderMainMsg(data);
+                setTimeout(getComment, 200)
+            })
+            .fail(function () {
+                console.log(err)
+            })
+    }
+    //跳转分类页
+    $('#link_classify').on('click', function () {
+        history.back();
+    })
+    // 用户选择规格时的样式
+    $('.size').on('click', function () {
+        $('.size').removeClass('current');
+        $(this).addClass('current');
+        var $dipid = Number($(this).attr('data-index'));
+        $('.g-price').text( addFloat($basicPrice * ($dipid)));
+        $('.size-msg').text(sizeArr[$dipid]);
+        $('.eat-msg').text('适合' + pepoleArr[$dipid-1] + '人分享');
+        $('.dinner-msg').text('餐具*' + dinnerArr[$dipid-1]);
+    })
+    //  数量选择操作
+    $('.select-count-wrap').on('click', 'span', function (e) {
+        var n = Number($('.count-msg').text());
+        if ($(this).hasClass('icon-jianshao')) {//用户商品数量选择--减少
+            if (n == 1) return
+            $('.count-msg').text(n - 1);
+        }
+        if ($(this).hasClass('icon-jiufuqianbaoicon06')) {
+            if (n == 50) return
+            $('.count-msg').text(n + 1);
+        }
+    })
+    //缩略图点击事件
+    $('.thumbnail-wrap').on('click', '.thumbnail', function () {
+        $('.thumbnail').removeClass('border');
+        $(this).addClass('border');
+        $('.view-pic-wrap img').attr('src', $(this).find('img').attr('src'));
+    })
+    // 加入购物车--修改购物车数据
+    $('#addShoppingCar').on('click', function () {
+        // 判定用户是否登录
+        if (user_id) {
+            joinShoppingCar();
+            setTimeout(() => {
+                if(state){
+                    $('.modal-content').text('已成功加入购物车')
+                    $('.modal').modal();
+                }else{
+                    $('.modal-content').text('操作失败请稍后再试')
+                    $('.modal').modal();
+                }
+            },200);
+        } else {
+            $('.modal-content').text('请登录')
+            $('.modal').modal();
+        }
+    })
+    //点击立即购买
+    $('#nowBuy').on('click',function(){
+        var size_id=$('.current').attr('data-index');
+        var order_amount=Number($('.count-msg').text());
+        var price =Number( $('.g-price').text())
+        var goods_price = order_amount* price ;
+        if(user_id){
+            
+                $.ajax({
+                    method:'POST',
+                    url:'addBillData',
+                    async:false,          
+                    data:{
+                        user_id:user_id,
+                        goods_id:goods_id,
+                        size_id:size_id,
+                        order_paytotal:goods_price,
+                        order_amount:order_amount,
+                    },
+                    dataType:'json',
+                })
+                .done(function(res){
+                    flag=true;
+                    if(res.state==0){
+                        window.location='/order';
+                    }
+                  })          
+               .fail(function(err){
+                console.log(err)
+                $('.modal-content').text('操作失败，请稍后再试')
+                $('.modal').modal();
+              })
+               
+        }else{
+            $('.modal-content').text('请登录')
+            $('.modal').modal();
+        }
+    })
+    //切换标题时点击事件
+    $('.them').on('click', function () {
+        $('.them').removeClass('now');
+        $(this).addClass('now');
+        moverBar();
+        if ($(this).hasClass('comment')) {
+            $('.msg-one').hide();
+            $('.msg-two').show();
+        }
+        if ($(this).hasClass('goods-detail')) {
+            $('.msg-one').show();
+            $('.msg-two').hide();
+        }
+    })
+    //小横条移动 
+    moverBar();
+    function moverBar() {
+        var left = ($('.now').position().left) + ($('.now').width() / 2);
+        var barWidth = $('.move-bar').width() / 2;
+        $('.move-bar').animate({ left: left - barWidth + 'px' }, 200)
+    }
+    //渲染评论信息函数
+    /* @param {arr} [] 评论信息数据 为数组
+       @param {current} [number] 当前显示的是第几页--根据它渲染信息长度，默认值为1
+     */
+    function renderComment(arr, current) {
+       
+        $('.msg-flat').html('')
+        var current = (current) ? current : 1;
+        var len = arr.length;
+        pages(current);
+        if (!len) return $('.msg-flat').html('该商品暂无用户评论信息')
+        for (var i = (current - 1) * 3; i < (current - 1) * 3 + 3 && i < len; i++) {
+            var starArr = [];
+            var pinlunPic= arr[i].evaluate_img.split('public\\')
+           if(pinlunPic.length>0){
+            var picDoc=pinlunPic.map(function(ele,a){
+                if (!ele.match(/^[ ]*$/)){
+                    return  '<img src="./'+ele+'" ></img>'
+                }
+                
+            })
+           }
+            var time = timeFormatter(arr[i].evaluate_time)
+            for (var k = 0; k < arr[i].evaluate_level; k++) {
+                var span = `<span class="iconfont icon-pingjiaxingxing"></span>`;
+                starArr.push(span);
+            }
+            var img=arr[i].user_img
+            if(!img){
+                img='./libs/b6c47a77d24bab23d53903879bd1238a.png'
+            }
+            var $document = ` <div class="item clear">
+        <div class="header-pic">
+            <img src="./${img}" alt="">
+        </div>
+        <div class="user-commment-wrap clear">
+        <div class="user-name">${arr[i].user_name}<span class="comment-time">${time}</span></div>
+            <div class="comment-star">${starArr.join('')}</div>
+            <div class="user-comment-msg">${arr[i].evaluate_content}</div>
+            <div class="comment-pic">
+               ${picDoc.join('')}
+                </div>
+         </div>
+         </div>`
+            $('.msg-flat').append($document)
+        }
+    }
+    // 修改 mysql 时间格式
+    function timeFormatter(value) {
+        var da = new Date(value.replace("/Date(", "").replace(")/", "").split("+")[0]);
+        return da.getFullYear() + "-" + (da.getMonth() + 1) + "-" + da.getDate() + " " + da.getHours() + ":" + da.getMinutes() + ":" + da.getSeconds();
+    }
+    // 评价页渲染分页
+    /*  
+        * param {num} [number] 评论信息总长度---根据此参数渲染分页页码数、默认值是1
+        *@param {current} [number] 当前显示的是第几页
+    */
+   //a 代表 当前， b 代表总页数
+    function pages(a){
+        var num = a ? a : 1;
+        var count = Math.ceil(detailsData.length/3)
+        $('#page-current').text(num);
+        $('#page-count').text('/ '+count)
+    }
+    
+    //分页左右按钮被点击时
+    $('.pageing-wrpa').on('click', 'span', function () {
+        var currentNum = Number($('#page-current').text())
+        if ($(this).hasClass('left')) {
+            if (currentNum == 1 || !currentNum) return
+            currentNum -= 1
+            renderComment(detailsData, currentNum);
+        } else if ($(this).hasClass('right')) {
+            if (currentNum == Math.ceil(detailsData.length / 3) || !currentNum) return
+            currentNum += 1
+            renderComment(detailsData, currentNum);
+        } else {
+            return
+        }
+    })
+    //点击跳转分页按钮
+    $('#search-page').on('click',function(){
+        var num = Number($('#need-page').val());
+        var count = Math.ceil(detailsData.length / 3);
+        if(!count){
+            count=1;
+        }
+        if(!isNaN(num)){
+            if(num <= count && num > 0){
+                renderComment(detailsData,num);
+            }else{
+                $('.modal-content').text('您输入的页码不存在！请重新输入')
+                $('.modal').modal();
+            }
+        }else{
+            $('.modal-content').text('只能输入页码数')
+            $('.modal').modal();
+        }
+    })
+    // 渲染主信息函数
+    //@param: a 为数组对象
+    function renderMainMsg(a) {
+        $('.classify').text(a[0].classify_name);
+        $('.g-name').text(a[0].goods_name);
+        $('.material').text(a[0].goods_detail_material);
+        $('.store').text(a[0].goods_detail_storage);
+        $('.goods-writing').text(a[0].goods_detail_desripe);
+        $('.g-price').text( addFloat(a[0].goods_detail_price))
+       
+        //生成甜度小星星
+        var sweetns = Number(a[0].goods_sweetns) //商品甜度
+        $('.g-sweetns').html('')    // 重置 甜度小星星
+        for (var j = 0; j < 5; j++) {
+            if (j <= sweetns) {
+                var span = `<span class="iconfont icon-pingjiaxingxing star"></span>`;
+                $('.g-sweetns').append(span);
+                continue
+            }
+            var span = ` <span class="iconfont icon-pingjiaxingxing"></span>`;
+            $('.g-sweetns').append(span)
+        }
+        //生成缩略图
+        var srcList = a[0].goods_detail_pic_main.split("+")
+        var len = srcList.length
+        $('.thumbnail-wrap').html('')   //重置 缩略图
+        for (var i = 0; i < len; i++) {
+            if (i == 0) {
+                var html = `<div class="thumbnail border">
+                    <img src="./${srcList[i]}" alt="">
+                    </div>`
+                $('.thumbnail-wrap').append(html);
+                $('.view-pic-wrap img').attr('src', srcList[i])
+                continue
+            }
+            var html = `<div class="thumbnail">
+                            <img src="./${srcList[i]}" alt="">
+                            </div>`
+            $('.thumbnail-wrap').append(html)
+        }
+        //显示可选尺寸
+        var size = Number(a[0].goods_detail_maxsize)
+        var sizeList = $('.size')
+        var sizeLength = $('.size').length
+        for (var sw = 0; sw < size; sw++) {
+            if (sw <= sizeLength) {
+                sizeList[sw].style.display = 'inline';
+            }
+        }
+        //渲染 详情图
+        var detailSrc = a[0].goods_detail_pic_desc.split("+");
+        var detailLength = detailSrc.length;
+        $('.state-pic').html('')
+        for (var dPic = 0; dPic < detailLength; dPic++) {
+            var div = ` <div class="img-wrap">
+                            <img src="./${detailSrc[dPic]}" alt="">
+                        </div>`
+            $('.state-pic').append(div)
+        }
+    }
+    //获取该商品品论信息的请求
+    function getComment() {
+        $.ajax({
+            method: 'get',
+            url: '/getcomment',
+            data: {
+                goodsId: goods_id,
+            }
+        })
+            .done(function (data) {
+                detailsData = data;
+                $('.comment-numb').text('(' + data.length + '条)')
+                renderComment(data);
+            })
+            .fail(function (err) {
+                $('.modal-content').text('操作失败请稍后再试')
+                $('.modal').modal();
+            })
+    }
+    // 加入购物车请求
+    function joinShoppingCar() {
+        $.ajax({
+            method: 'post',
+            url: '/jionShoppingCart',
+            data: {
+                price: $('.g-price').text(),
+                userId: user_id,
+                goodsId: goods_id,
+                count: $('.count-msg').text(),
+                size: $('.current').attr('data-index')
+            }
+        })
+            .done(function (data) {
+                if (data.affectedRows >= 1) {
+                    state = true;
+                }
+            })
+            .fail(function (err) {
+                $('.modal-content').text('操作失败请稍后再试')
+                $('.modal').modal();
+            })
+    }
+    // 添加小数后两位的函数
+    function addFloat(value){
+        value = value.toString();
+        var num = value.split('.')
+        if(num.length==1){
+            value +='.00'
+            return value
+        }
+        if(num.length>1){
+           if( num[num.length-1].length<2) return value+'0'
+           return value
+        }
+    }
+
+
+})

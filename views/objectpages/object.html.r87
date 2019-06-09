@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/home/nav_footer.css" />
+    <!-- <link rel="stylesheet" href="./css/home/iconfont.css"> -->
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/object/object.css">
+</head>
+
+<body>
+    <%- include ../home/nav.html %>
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                已成功加入购物车
+            </div>
+        </div>
+    </div>
+    <p class="objectcount">
+        <!-- <span> “送长辈” </span>
+        总共搜索到 7 款相关商品 -->
+    </p>
+    <main class="objectmain clear">
+        <div>
+            <div class="previewimgbox">
+                <img src="./img/cake/mousse/dew/preview.png" alt="">
+            </div>
+            <p>
+                露水茶颜
+            </p>
+            <div class="sellmsg clear">
+                <div>
+                    <span>Sweetness:</span>
+                    <img src="./img/object/sw1.png" alt="">
+                </div>
+                <div class='sellcount' title="累计销量">
+                    <img src='./img/object/xiaoliang.png' alt="">
+                    <span>123</span>
+                </div>
+            </div>
+            <p class="price">
+                <span>¥ 230.00</span>
+            </p>
+
+            <div class="clear">
+                <p class='shop_now'> 立即购买 </p>
+
+                <div class='shop_car'>
+                    <img src='./img/home/jiarugouwuche.png'>
+                </div>
+            </div>
+        </div>
+        <div class="positionC">
+            <div class="previewimgbox">
+                <a href="">
+                    <img src="./img/cake/mousse/dew/preview.png" alt="">
+                </a>
+            </div>
+            <p>
+                露水茶颜
+            </p>
+            <div class="sellmsg  clear">
+                <div>
+                    <span>Sweetness:</span>
+                    <img src="./img/object/sw1.png" alt="">
+                </div>
+                <div class='sellcount' title="累计销量">
+                    <img src='./img/object/xiaoliang.png' alt="">
+                    <span>123</span>
+                </div>
+            </div>
+            <p>
+                <span>¥ 230.00</span>
+            </p>
+
+            <div class="clear">
+                <p class='shop_now'> 立即购买 </p>
+
+                <div class='shop_car'>
+                    <img src='./img/home/jiarugouwuche.png'>
+                </div>
+            </div>
+        </div>
+        <div class="positionR">
+            <div class="previewimgbox">
+                <img src="./img/cake/mousse/dew/preview.png" alt="">
+            </div>
+            <p>
+                露水茶颜
+            </p>
+            <div class="sellmsg  clear">
+                <div>
+                    <span>Sweetness:</span>
+                    <img src="./img/object/sw1.png" alt="">
+                </div>
+                <div class='sellcount' title="累计销量">
+                    <img src='./img/object/xiaoliang.png' alt="">
+                    <span>123</span>
+                </div>
+            </div>
+            <p>
+                <span>¥ 230.00</span>
+            </p>
+
+            <div class="clear">
+                <p class='shop_now'> 立即购买 </p>
+
+                <div class='shop_car'>
+                    <img src='./img/home/jiarugouwuche.png'>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- <%-include ../home/footer.html %> -->
+    <script src=".\libs\jquery-3.3.1.min.js"></script>
+    <script src=".\libs\bootstrap\js\bootstrap.min.js"></script>
+    <script src=".\js\ajax.js"></script>
+    <script src=".\js\objectpages\objectaddcar.js"></script>
+    <script src=".\js\objectpages\objectpages.js"></script>
+    <!-- <script src=".\js\home\home.js"></script> -->
+</body>
+
+</html>

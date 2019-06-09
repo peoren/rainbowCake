@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/home/iconfont-chat-left-right.css" />
+    <link rel="stylesheet" href="./libs/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/order/iconfont_zzy.css">
+    <link rel="stylesheet" href="./css/order/paysuc.css">
+    <link rel="stylesheet" href="./css/home/iconfont.css" />
+    <link rel="stylesheet" href="./css/home/nav_footer.css" />
+    <title>购买成功</title>
+</head>
+<body>
+        <% include ../home/nav.html %>
+    <!-- 进度条 -->
+    <div class="sc-bar clear container     ">
+        <ul class="sc-bar-ul">
+          <li class="bar1">
+                <div class="bar-long bar-color"></div>
+                <div class="barimg">
+                  <span class="iconfont icon-yuanquangou icon-color1"></span>
+                </div>
+                <span class="num-color">
+                   <i>1</i>
+                  购物车
+                </span>
+          </li>
+          <li class="bar1">
+                <div class="bar-long bar-color"></div>
+                <div class="barimg">
+                    <span class="iconfont icon-yuanquangou icon-color1"></span>
+                </div>
+                <span class="num-color">
+                    <i>2</i>
+                    确认订单
+                </span>
+          </li>
+          <li class="bar1">
+                <div class="bar-long"></div>
+                <div class="barimg">
+                    <span class="iconfont icon-yuanquangou icon-color2"></span>
+                </div>
+                <span class="num">
+                    <i>3</i>
+                    提交订单
+                </span>
+            </li>
+            <li class="bar1">
+                <div class="bar-long"></div>
+                <div class="barimg">
+                     <span class="iconfont icon-yuanquangou icon-color2"></span>
+                </div>
+                <span class="num">
+                    <i>4</i>
+                    支付成功
+                </span>
+          </li>
+          <li class="bar2">
+             <div class="bar-short"></div>
+          </li>
+        </ul>
+      </div>
+      <section>
+
+           <div class="clear">
+               <img class="left" src="./img/order/suc.png" alt="">
+                <p>购买成功! </p>
+                <span> <span id="time">3</span>秒后跳转至首页 </span>
+           </div>
+      </section>
+      <% include ../home/footer.html %>
+    <script src="./libs/jquery-3.3.1.min.js"></script>
+    <script src="./libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./libs/jquery-ui/jquery-ui.min.js"></script>
+    <script src="./js/oder/paysuc.js"></script>
+</body>
+</html>

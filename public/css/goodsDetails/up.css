@@ -1,0 +1,172 @@
+body{
+    background-color: #f5f5f5;
+}
+.header{
+    text-align: center;
+}
+.header .title{
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+.order-msg{
+    font-size: 14px;
+}
+.order-msg .order-num{
+    margin-left: 5px;
+    margin-right: 25px;
+}
+.order-msg .order-num,
+.order-msg .order-time{
+    font-size: 12px;
+    color: #42424485;
+}
+.main-msg{
+    text-align: center;
+    border-top:  solid 1px #42424418;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-bottom:  solid 1px #42424418;
+}
+.left-goods-msg{
+    width: 28%;
+    float: left;
+    border-right: solid 1px #42424418;
+}
+.goods-pic{
+    width: 100%;
+}
+.goods-pic img{
+    width: 100%;
+    height: auto;
+}
+.right-form{
+    text-align: left;
+    width: 65%;
+    float: right;
+}
+.grade-star-wrap p{
+    float: left;
+    margin: 0;
+    margin-right: 5px;
+    padding: 0;
+    font-size: 16px;
+    cursor: pointer;
+}
+p.star-num-wrap{
+    margin-left: 10px;
+    font-size: 16px;
+}
+.icon-pingjiaxingxing{
+    display: inline-block;
+    line-height: 20px;
+    vertical-align: middle;
+    margin-top: -5px;
+}
+.user-input{
+    width: 100%;
+    margin-top: 40px;
+}
+.user-input p{
+    padding-right: 10px;
+    text-align: right;
+    float: left;
+}
+.user-input textarea{
+    float: left;
+    width: calc(100% - 81px);
+    resize: none;
+    min-height: 80px;
+    text-indent: 2em;
+}
+textarea::placeholder{
+    text-indent: 2em;
+}
+.up-img{
+    margin-top: 30px;
+}
+.up-img button{
+    float: right;
+    margin-right: 30px;
+    width: 120px;
+    height: 28px;
+    outline: none;
+    border-radius: 5px;
+    background-color: #ff4001;
+    color: #ffffff;
+}
+.check-pic{
+    margin-top: 20px;
+}
+.check-pic .pic-wrap{
+    position: relative;
+    width:20%;
+    min-width: 100px;
+    float: left;
+    margin-right: 5px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+.iconfont{
+    color: #eeeeee;
+    user-select: none;
+}
+.red,
+.set{
+    color: #ff4001;
+}
+/* 选择图片按钮 */
+.input-box{
+    float: left;
+    width: 80px;
+    height: 40px;
+    box-sizing: border-box;
+    font-size: 12px;
+    text-align: center;
+    line-height: 40px;
+    border: dashed 1px #ff4001;
+    background: #f5f5f5;
+    cursor: pointer;
+    user-select: none;
+}
+input[type=file]{
+    display: none;
+}
+.views-wrap{
+    margin-top: 20px;
+}
+.views-wrap div{
+    width: 20%;
+    min-width: 120px;
+    height: auto;
+    float: left;
+    margin-left: 3px;
+    position: relative;
+}
+.views-wrap div img{
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+}
+.views-item a{
+    /* display: block; */
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 100px;
+    color: #ff4001;
+    background: #0000007e;
+    position: absolute;
+    left: 0;
+    top:0;
+    display: none;
+}
+.views-item:hover a{
+    display: block
+}
+
+
+
+
+
+

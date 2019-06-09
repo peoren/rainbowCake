@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/shoppingcart/iconfonts.css" />
+    <link rel="stylesheet" href="./css/home/nav_footer.css" />
+    <link rel="stylesheet" href="./css/home/iconfont.css" />
+    <link rel="stylesheet" href="./css/home/iconfont-chat-left-right.css" />
+    <link rel="stylesheet" href="./css/shoppingcart/shoppingcart.css" />
+  </head>
+  <body>
+      <% include ../home/nav.html %>
+    <main class="container clear">
+      <div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content" style="height:auto">
+        <div class="modal-body text-center" id="modalContent"></div>
+        <div class="modal-footert text-center" id="showBtn" >
+          <button type="button" class="btn btn-default" id="cancelBtn" data-dismiss="modal" style="background-color: none">取消</button>
+          <button type="button" class="btn btn-primary" id="sureBtn" >确认</button>
+        </div>
+      </div>
+    </div>
+  </div>
+      </div>
+      <!-- 进度条 -->
+      <div class="sc-bar clear">
+        <ul class="sc-bar-ul">
+          <li class="bar1">
+            <div class="bar-long bar-color"></div>
+            <div class="barimg">
+              <span class="iconfont icon-yuanquangou icon-color1"></span>
+            </div>
+            <span class="num-color">
+              <i>1</i>
+              购物车
+            </span>
+          </li>
+          <li class="bar1">
+            <div class="bar-long"></div>
+            <div class="barimg">
+              <span class="iconfont icon-tuoyuanxing icon-color2"></span>
+            </div>
+            <span class="num">
+              <i>2</i>
+              确认订单
+            </span>
+          </li>
+          <li class="bar1">
+            <div class="bar-long"></div>
+            <div class="barimg">
+              <span class="iconfont icon-tuoyuanxing icon-color2"></span>
+            </div>
+            <span class="num">
+              <i>3</i>
+              提交订单
+            </span>
+          </li>
+          <li class="bar1">
+            <div class="bar-long"></div>
+            <div class="barimg">
+              <span class="iconfont icon-tuoyuanxing icon-color2"></span>
+            </div>
+            <span class="num">
+              <i>4</i>
+              支付成功
+            </span>
+          </li>
+          <li class="bar2">
+            <div class="bar-short"></div>
+          </li>
+        </ul>
+      </div>
+      <!-- 购物车 -->
+      <div class="cartbox">
+        <h5>订单信息</h5>
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th style="width:8%"></th>
+              <th style="text-align: left">商品</th>
+              <th>属性</th>
+              <th>单价</th>
+              <th style="width:15%">数量</th>
+              <th>优惠</th>
+              <th>金额</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody id="cartContent">
+          </tbody>
+        </table>
+      </div>
+      <!-- 结算和按钮 -->
+      <div class="clear ">
+        <!-- 结算 -->
+        <div class="acount-box">
+          <!-- 共计 -->
+          <div class="acount-del clear" style="color:inherit;font-size: inherit;margin-bottom: 40px;">
+            <div class="acountnum">
+              共计 <span style="float:none" id="acountNum"></span> 件商品
+            </div>
+            <div class="imgdel">
+              <img id="delAll" style="padding: 0 15px" src="./img/shoppingcart/dustbin.png" alt=""/>
+            </div>
+          </div>
+          <!-- 商品总计 -->
+          <div class="price-acount clear">
+            <div>商品总计</div>
+            <div id="priceTotal"></div>
+          </div>
+          <!-- 优惠 -->
+          <div class="price-discount clear">
+            <div>优惠</div>
+            <div id="priceDiscount"></div>
+          </div>
+          <!-- 应付总额 -->
+          <div class="pay-price clear">
+            <div style="color:#151E26">应付总额</div>
+            <div id="payPrice" style="color:#151E26;font-size: 16px"></div>
+          </div>
+        </div>
+        <!-- 按钮 -->
+        <div class="pay-button clear">
+          <div class="payfor">下单结算</div>
+          <div class="go-on" onclick="toObjectList()">继续购物</div>
+        </div>
+      </div>
+      <!-- 分割线 -->
+      <div class="cutoff"></div>
+      <!-- 推荐 -->
+      <div class="recommend-box">
+        <div>热销新品推荐</div>
+         <div class="four-box clear">
+         </div>
+      </div>
+    </main>
+    <% include ../home/footer.html %>
+  </body>
+  <script src="./libs/jquery-3.3.1.min.js"></script>
+  <script src="./libs/bootstrap/js/bootstrap.min.js"></script>
+  <script src=".\js\home\home.js"></script>
+  <script src="./js/shoppingcart/shoppingcart.js"></script>
+</html>

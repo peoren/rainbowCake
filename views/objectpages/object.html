@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/home/nav_footer.css" />
+    <link rel="stylesheet" href="./css/home/iconfont.css">
+    <link rel="stylesheet" href="./css/home/iconfont-chat-left-right.css" />
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/object/object.css">
+</head>
+
+<body>
+    <%- include ../home/nav.html %>
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                已成功加入购物车
+            </div>
+        </div>
+    </div>
+    <p class="objectcount">
+        <!-- <span> “送长辈” </span>
+        总共搜索到 7 款相关商品 -->
+    </p>
+    <div class="classnav">
+        <ul class="clear">
+            <li classi="0">全部分类</li>
+            <li classi="1">慕斯</li>
+            <li classi="2">奶油</li>
+            <li classi="3">巧克力</li>
+            <li classi="4">水果</li>
+            <li classi="5">咸奶油</li>
+            <li classi="6">雪域</li>
+        </ul>
+    </div>
+    <main class="objectmain clear">
+
+        <div>
+            <a href="/sendId?id=1">
+                <div class="previewimgbox"
+                    style="background:url(../../img/cake/mousse/dew/preview.png) no-repeat center; background-size: 100% auto;">
+                </div>
+            </a>
+            <div class="previewimgbox2">
+
+            </div>
+            <p>
+                露水茶颜
+            </p>
+            <p class="price">
+                <span>¥ 230.00</span>
+            </p>
+            <div class="sellmsg clear">
+                <div>
+                    <span>Sweetness:</span>
+                    <img src="./img/object/sw1.png" alt="">
+                </div>
+                <div class='sellcount' title="累计销量">
+                    <img src='./img/object/xiaoliang.png' alt="">
+                    <span>123</span>
+                </div>
+            </div>
+
+            <div class="chooseSize hidden">
+                <p>
+                    <span>￥</span><span class="ch_price">250</span><span>/</span><span class="ch_size">1.2磅</span>
+                </p>
+                <span class="ch_size" index='1'>1.2磅</span>
+                <span class="ch_size" index='2'>2.2磅</span>
+                <span class="ch_size" index='3'>3.2磅</span>
+                <span class="ch_size" index='4'>7.2磅</span>
+
+                <div>
+                    <input type="button" value="确认购买" id="confirm">
+                    <input type="button" value="取消" id="cancel">
+                </div>
+            </div>
+            <div class="clear">
+                <p class='shop_now'> 立即购买 </p>
+
+                <div class='shop_car'>
+                    <img src='./img/home/jiarugouwuche.png'>
+                </div>
+            </div>
+        </div>
+        <div class="positionC">
+            <div class="previewimgbox">
+                <a href="">
+                    <img src="./img/cake/mousse/dew/preview.png" alt="">
+                </a>
+            </div>
+            <p>
+                露水茶颜
+            </p>
+            <div class="sellmsg  clear">
+                <div>
+                    <span>Sweetness:</span>
+                    <img src="./img/object/sw1.png" alt="">
+                </div>
+                <div class='sellcount' title="累计销量">
+                    <img src='./img/object/xiaoliang.png' alt="">
+                    <span>123</span>
+                </div>
+            </div>
+            <p>
+                <span>¥ 230.00</span>
+            </p>
+
+            <div class="clear">
+                <p class='shop_now'> 立即购买 </p>
+
+                <div class='shop_car'>
+                    <img src='./img/home/jiarugouwuche.png'>
+                </div>
+            </div>
+        </div>
+        <div class="positionR">
+            <div class="previewimgbox">
+                <img src="./img/cake/mousse/dew/preview.png" alt="">
+            </div>
+            <p>
+                露水茶颜
+            </p>
+            <div class="sellmsg  clear">
+                <div>
+                    <span>Sweetness:</span>
+                    <img src="./img/object/sw1.png" alt="">
+                </div>
+                <div class='sellcount' title="累计销量">
+                    <img src='./img/object/xiaoliang.png' alt="">
+                    <span>123</span>
+                </div>
+            </div>
+            <p>
+                <span>¥ 230.00</span>
+            </p>
+
+            <div class="clear">
+                <p class='shop_now'> 立即购买 </p>
+
+                <div class='shop_car'>
+                    <img src='./img/home/jiarugouwuche.png'>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- <%-include ../home/footer.html %> -->
+    <script src=".\libs\jquery-3.3.1.min.js"></script>
+    <script src=".\libs\bootstrap\js\bootstrap.min.js"></script>
+    <script src=".\js\ajax.js"></script>
+    <script src=".\js\objectpages\objectaddcar.js"></script>
+    <script src=".\js\objectpages\objectpages.js"></script>
+    <script src=".\js\home\home.js"></script>
+    <!-- <script src=".\js\home\home.js"></script> -->
+</body>
+
+</html>

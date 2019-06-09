@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./libs/jquery-ui/jquery-ui.min.css">
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/order/order.css">
+    <link rel="stylesheet" href="./css/order/iconfont_zzy.css">
+    <link rel="stylesheet" href="./css/home/iconfont.css" />
+    <link rel="stylesheet" href="./css/home/nav_footer.css" />
+    <link rel="stylesheet" href="./css/home/iconfont-chat-left-right.css" />
+    <title>订单</title>
+</head>
+<body>
+    
+        <% include ../home/nav.html %>
+
+    
+     <!-- 进度条 -->
+     <div class="sc-bar clear container     ">
+        <ul class="sc-bar-ul">
+          <li class="bar1">
+                <div class="bar-long bar-color"></div>
+                <div class="barimg">
+                  <span class="iconfont icon-yuanquangou icon-color1"></span>
+                </div>
+                <span class="num-color">
+                   <i>1</i>
+                  购物车
+                </span>
+          </li>
+          <li class="bar1">
+                <div class="bar-long bar-color"></div>
+                <div class="barimg">
+                    <span class="iconfont icon-yuanquangou icon-color1"></span>
+                </div>
+                <span class="num-color">
+                    <i>2</i>
+                    确认订单
+                </span>
+          </li>
+          <li class="bar1">
+                <div class="bar-long"></div>
+                <div class="barimg">
+                    <span class="iconfont icon-yuanquangou icon-color2"></span>
+                </div>
+                <span class="num">
+                    <i>3</i>
+                    提交订单
+                </span>
+            </li>
+            <li class="bar1">
+                <div class="bar-long"></div>
+                <div class="barimg">
+                     <span class="iconfont icon-yuanquangou icon-color2"></span>
+                </div>
+                <span class="num">
+                    <i>4</i>
+                    支付成功
+                </span>
+          </li>
+          <li class="bar2">
+             <div class="bar-short"></div>
+          </li>
+        </ul>
+      </div>
+    <!-- 当前订单信息 -->
+    <section class="box clear container    ">
+        <h4>订单信息</h4>
+        <div class="order">
+            <table>
+                <thead>
+                        <tr>
+                                <th>
+                                    商品图
+                                </th>
+                                <th>
+                                    商品信息
+                                </th>
+                                <th>
+                                   规格
+                                </th>
+                                <th>
+                                    单价
+                                </th>
+                                <th>
+                                   数量
+                                </th>
+                                <th>
+                                   优惠方式
+                                </th>
+                                <th>
+                                   总金额(元)
+                                </th>
+                               
+                            </tr>
+                </thead>
+            <tbody>
+
+            </tbody>
+                
+   
+    </table>
+    
+        </div>
+        
+       
+        <!-- 送货信息 -->
+        <div class="clear">
+        <div class="left site">
+            <h4 class="h-title">送货地址</h4>
+            <div class="clear address ">
+               
+            </div>
+        </div>
+        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                          <h4 class="modal-title" id="myModalLabel">个人地址</h4>
+                  </div>
+                  <div class="modal-body clear">
+                      <div id="m_address">
+  
+                      </div>
+                  </div>
+  
+                  <div class="modal-footer">
+                      <button type="button" class="lbtn " data-dismiss="modal" style="border: 1px solid #666;">取消</button>
+                      <button type="button" id="sure" class="lbtn btn-primary" data-dismiss="modal" style="background: #ff4001;" >确认</button>
+                  </div>
+              </div>
+            </div>
+          </div>                     
+       
+
+        
+        <!-- 送货时间 -->
+        <div class="left  deliveryTime">
+            <h4 class="h-title">送货时间</h4>
+            <p class="d-date">日期：
+                <input type="text" id="datepicker" placeholder="请选择一个送货日期" > 
+                <span id="wish"></span>          
+            </p>
+            <p>具体时间：<input type="time" id="gTime" max="21:00" min="09:00"  value="17:00"></p>
+            <p id="note">注意：<span>蛋糕只能预定即日后的十五天，配送时间为早上九点至晚上九点，默认配送时间为下午五点，配送时间（不可抗力除外）为选择时间前后一小时内，若配送时间与生日相同则赠送20元代金券。</span></p>
+        </div>
+        </div>
+       
+        <div>
+            <h4 class="h-title">备注</h4>
+            <input type="text" id="remarks" placeholder="生日祝福限十五字以内">
+        </div>
+        <!-- 结算 -->
+        <div id="balance">
+            <div class="clear">
+                    <div class="right">
+                            <p class="clear">商品总计：<span  class="right">￥<span id="order_price">0</span>元</span></p>
+                            <p class="clear">优惠方式：<span class="right fav">无</span></p>
+                            <p class="clear">会员优惠：<span class="right member">无</span></p>
+                            <p class="clear" id="inAll" style=" color: black;">应付金额：<span id="allPrice" class="right">￥ <span  id="total">0</span> 元</span></p>
+                            
+                    </div>
+            </div>
+           <div class="right clear">
+                <div class="lbtn left" id="btnBack">
+                        返回购物车
+                        
+                </div>
+                    <!-- <div class="btn left" data-toggle="modal" data-target="#myModal" id="btnInAll">结算订单</div> -->
+                <button type="button btn btn-primary" class="lbtn left" data-toggle="modal"  id="btnInAll" data-target="#myModal">结算订单</button>
+                
+            </div>
+        </div>
+        <div class="modal fade bs-example-modal-sm" tabindex="-1" id="warbox" role="dialog" aria-labelledby="mySmallModalLabel">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content" id="war">
+                    <p>请输入送货日期!</p>
+                </div>
+            </div>
+        </div>
+    
+
+
+
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">在线支付</h4>
+            </div>
+            <div class="modal-body clear">
+                <div class="left Zpay" id="weixin">
+                    <h5>微信支付</h5>
+                    <img src="./img/order/weixin.jpg" alt="">
+                </div>
+                <div class="left Zpay" id="zhifubao">
+                    <h5>支付宝支付</h5>
+                    <img src="./img/order/zhifubao.jpg" alt="">
+                </div>
+            </div>
+            <div class="modal-footer  paybody">
+                <button type="button" class="lbtn " data-dismiss="modal" style="border: 1px solid #666;">取消支付</button>
+                <button type="button" id="Balance" class="lbtn btn-primary" style="background: #ff4001;" >确认支付</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div> 
+    
+    </section>
+    <!-- Button trigger modal -->
+    
+    <% include ../home/footer.html %>
+
+    
+    <script src="./libs/jquery-3.3.1.min.js"></script>
+    <script src="./libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./libs/jquery-ui/jquery-ui.min.js"></script>
+    
+    <script src="./js/oder/order.js"></script>
+    <script src=".\js\home\home.js"></script>  
+</body>
+</html>

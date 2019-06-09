@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/goodsDetails/iconfont.css">
+    <link rel="stylesheet" href="./css/goodsDetails/up.css">
+    <link rel="stylesheet" href="./css/home/nav_footer.css" />
+    <link rel="stylesheet" href="./css/home/iconfont.css" />
+    <link rel="stylesheet" href="./css/home/iconfont-chat-left-right.css" />
+</head>
+
+<body>
+        <% include ../home/nav.html %>
+    <main class="container">
+        <section class="header">
+            <h2 class="title">评价订单</h2>
+            <p class="order-msg">
+                订单号：<span class="order-num">654664646464</span>
+                成交时间：<span class="order-time">25-2-5-15-1-5-15</span>
+            </p>
+        </section>
+        <section class="main-msg">
+            <div class="comment-msg-wrap clear">
+                <div class="left-goods-msg">
+                    <div class="goods-pic">
+                        <img src="./img/cake/fruit/loveSong/preview.png" alt="" id="goods_img">
+                    </div>
+                    <p class="g-name">布朗尼精灵</p>
+                    <p class="order-price">￥500.00</p>
+                    <p class="order-size-wrap">
+                        规格：
+                        <span class="size">7.2磅</span>
+                    </p>
+                </div>
+                <div class="right-form">
+                    <form  class="form" enctype="multipart/form-data">
+                        <div class="grade-star-wrap clear">
+                            <p>商品评分：</p>
+                            <p class="grade-star">
+                                <span class="iconfont icon-pingjiaxingxing" data-index="1"></span>
+                                <span class="iconfont icon-pingjiaxingxing" data-index="2"></span>
+                                <span class="iconfont icon-pingjiaxingxing" data-index="3"></span>
+                                <span class="iconfont icon-pingjiaxingxing" data-index="4"></span>
+                                <span class="iconfont icon-pingjiaxingxing" data-index="5"></span>
+                            </p>
+                            <p class="star-num-wrap"><span class="star-num">5</span>星</p>
+                        </div>
+                        <div class="user-input clear">
+                            <p> 买家印象：</p>
+                            <textarea  class="text" id="comment-text" placeholder="分享体验心得，给万千想买的人一个参考~"></textarea>
+                        </div>
+                        <div class="up-img clear">
+                            <div class="input-box clear">
+                                + 选择图片
+                                <input type="file"  class="up-pic" accept="image/*" multiple>
+                            </div>
+                            <button type="button" id="btn">发表</button>
+                        </div>
+                        <div class="views-wrap clear">
+                            <!-- <div class="views-item">
+                                <img src="./img/cake/header2.jpeg" alt="">
+                                <a href="javascript:return false">删除</a>
+                            </div> -->
+                        </div>
+                </div>
+                </form>
+            </div>
+            </div>
+            <% include ../home/footer.html %>
+        </section>
+    </main>
+    <script src="./libs/jquery-3.3.1.min.js"></script>
+    <script src="./libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./js/details/upComment.js"></script>
+    <script src=".\js\home\home.js"></script>
+</body>
+
+</html>

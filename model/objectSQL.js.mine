@@ -1,0 +1,48 @@
+const db = require('./db');
+module.exports = {
+    getGoodsOfObject: function (req, res, callback) {
+        //获取参数
+        let c_object = req.query.cobject;
+        let sql = `SELECT goods_name,goods_id,goods_sweetns,goods_price,goods_pic_main,c_object,
+        (select sell_amount from sell where goods.goods_id = sell.goods_id)  as sell_amount FROM goods having c_object = ? `
+        db(sql, [c_object], callback)
+    },
+    getGoodsOfClass: function (req, res, callback) {
+        let classify = req.query.classify;
+        if (classify == '0') {
+            let sql = `SELECT goods_name,goods_id,classify_id,goods_sweetns,goods_price,goods_pic_main,c_object,
+            (select sell_amount from sell where goods.goods_id = sell.goods_id)  as sell_amount FROM goods`
+            db(sql, [], callback)
+        } else {
+            let sql = `SELECT goods_name,goods_id,classify_id,goods_sweetns,goods_price,goods_pic_main,c_object,
+            (select sell_amount from sell where goods.goods_id = sell.goods_id)  as sell_amount FROM goods having classify_id = ? `
+            db(sql, [classify], callback)
+        }
+
+    },
+    addcar: function (req, res, callback) {
+        //获取参数
+        let user_id = req.body.user_id;
+        let goods_id = req.body.goods_id;
+        let sql = `insert into shoppingcart (user_id,goods_id,goods_price) values(?,?,(select goods_price from goods where goods_id = ?))`
+        db(sql, [user_id, goods_id, goods_id], callback)
+    },
+    searchGoods: function (req, res, callback) {
+        //获取参数
+        let searchtext = req.query.searchtext;
+        let sql = `SELECT goods_name,goods_id,goods_sweetns,classify_id,goods_price,goods_pic_main,c_object 
+        FROM goods where concat(goods_name,goods_sweetns) like '%' ? '%';`
+        db(sql, [searchtext], callback)
+    },
+    addbilldata: function (req, res, callback) {
+        const user_id = req.body.user_id;
+        const goods_id = req.body.goods_id;
+        const size_id = req.body.size_id;
+        const order_paytotal = req.body.order_paytotal;
+        const order_amount = req.body.order_amount;
+        // const goods_name = req.body.order_amount;
+        let arr = [user_id, goods_id, size_id, order_amount, order_paytotal];
+        let sql = `insert into bill (user_id,goods_id,size_id,order_amount,order_paytotal) values(?,?,?,?,?)`
+        db(sql, arr, callback)
+    }
+}

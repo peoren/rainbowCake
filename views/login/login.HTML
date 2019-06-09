@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/login/login.css">
+    <title>login</title>
+</head>
+
+<body>
+    <div id="login-box">
+        <div id="exit">
+            <img src="./img/login/exit.png" alt="">
+        </div>
+        <div id="box1">
+            <div id="fast">
+            </div>
+            <p id="entry">立即 <br> 注册</p>
+        </div>
+        <div class="clear" id="box-titel">
+            <div class="light left"></div>
+            <h2 class="left">普通登录</h2>
+            <div class="light left" style="margin: 17px 0px 0 20px;"></div>
+        </div>
+        <form action="" class="clear loginForm">
+            <div class="clear">
+                <img class="left" src="./img/login/user.png" alt="">
+                <input class="left user-name" type="text" placeholder="请输入账号">
+            </div>
+            <div class="clear">
+                <img class="left" src="./img/login/password.png" alt="">
+                <input class="left user-pass" type="password" placeholder="请输入密码" autocomplete="none">
+                <img id="f_img" class="left" src="./img/login/deng.png" alt="">
+            </div>
+            <div class="clear">
+                <img class="left" src="./img/login/captcha.png" alt="">
+                <input class="left" id="captcha" type="text" style="width:120px;" placeholder="请输入验证码">
+                <canvas class="left" id="canvas"></canvas>
+                <a href="#" class="left rest-canvas">换一张</a>
+            </div>
+            <button type="button" id="btn">登录</button>
+            <div class="clear protocal-wrap">
+                <input class="left" id="protocal" type="checkbox" value="">
+                <p id="agreement" class="left">我已阅读并同意 <a href="">《会员注册协议》</a> 和 <a href="">《隐私保护政策》</a></p>
+            </div>
+            <div class="find-password clear"><a href="#">忘记密码</a></div>
+        </form>
+    </div>
+    <!-- module -->
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+
+            </div>
+        </div>
+    </div>
+    <div class="regest-box" style="display:none;">
+        <div id="box2">
+            <div id="fast2">
+            </div>
+            <p id="entry2">返回 <br> 登录</p>
+        </div>
+        <div class="clear" id="box-titel2">
+            <div class="light left"></div>
+            <h2 class="left">注册账号</h2>
+            <div class="light left" style="margin: 17px 0px 0 20px;"></div>
+        </div>
+        <form  class="clear regestForm">
+            <div class="clear">
+                <img class="left" src="./img/login/user.png" alt="">
+                <input class="left user-name2" type="text" placeholder="请输入账号">
+            </div>
+            <div class="clear">
+                <img class="left" src="./img/login/password.png" alt="">
+                <input class="left user-pass2" type="password" placeholder="请输入密码" autocomplete="none">
+            </div>
+            <div class="clear">
+                <img class="left" src="./img/login/password.png" alt="">
+                <input class="left verify" type="password" placeholder="确认密码" autocomplete="none">
+            </div>
+            <div class="clear">
+                <img class="left"  src="./img/login/user.png" alt="">
+                <input class="left telephone" type="password" placeholder="请输入电话号码" autocomplete="none">
+            </div>
+            <button type="button" id="btn2">注册</button>
+            <div class="clear protocal-wrap">
+                <input class="left" id="protocal2" type="checkbox" value="">
+                <p id="agreemen2" class="left">我已阅读并同意 <a href="">《会员注册协议》</a> 和 <a href="">《隐私保护政策》</a></p>
+            </div>
+            <div class="find-password clear"><a href="#">忘记密码</a></div>
+        </form>
+    </div>
+    <script src="./libs/jquery-3.3.1.min.js"></script>
+    <script src="./libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./libs/md5/md5.min.js"></script>
+    <script src="./js/login/login.js"></script>
+</body>
+
+</html>

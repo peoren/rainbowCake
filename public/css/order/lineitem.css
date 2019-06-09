@@ -1,0 +1,161 @@
+.left {
+    float: left;
+}
+.right {
+  float: right;
+}
+/* section h4 {
+    margin-top:150px;
+} */
+#order-head {
+  width: 100%;
+  background: #ff4001;
+  height: 30px;
+  margin: 50px 0 0 0;
+}
+.o-one {
+    width: 30%;
+    text-align: center;
+    line-height: 30px;
+}
+.title {
+    width: 14%;
+    text-align: center;
+    line-height: 30px;
+}
+
+
+.detail {
+    width: 14%;
+    text-align: center;
+    line-height: 98px;
+}
+.goods img {
+    width: 80px;
+}
+.g-one>div {
+    margin: 20px 0 20px 40px;
+}
+.g-one {
+    width: 30%;
+   
+}
+.g-name  {
+    width: 50%;
+    font-size: 14px;
+    line-height: 16px;
+    
+}
+.goods>div {
+    border-bottom: 1px dashed #afafaf;
+}
+#buyer {
+    width: 30%;
+    padding: 20px;
+    border:1px solid #ff4001;
+    border-radius: 5px;
+    margin: 20px 0 0  0;
+}
+/* #buyer span {
+    display: inline-block;
+    width: 
+} */
+.b-left {
+    width: 25%;
+
+}
+.b-right {
+    width: 75%;
+}
+hr {
+    
+   border:1px dashed #afafaf;
+  
+}
+#o-state img {
+    width: 40px;
+    text-align: center;
+    margin: 0 0 0 40px;
+}
+#o-state {
+    width: 70%;
+    margin:  20px 0 0 0 ;
+}
+.o-box {
+    width: 80%;
+}
+#o-img {
+    height: 60px;
+    width: 10%;
+}
+#info {
+    width: 88%;
+    margin-bottom: 40px;
+}
+h3 {
+    margin: 20px 0 20px 20px ;
+}
+#skip {
+    margin: 40px 0 0 95px;
+    font-size: 12px;
+    color: #afafaf;
+    
+}
+#balance p{
+    font-size: 16px;
+    color: #666;
+  }
+#balance>div>div>p>span{
+    display: inline-block;
+    margin-left:80px; 
+  }
+  #inAll {
+    color: black;
+  }
+  #price {
+      margin-top:40px;
+  }
+  /* 模态框 */
+  .order table th {
+    text-align:  center;
+  }
+  .order table td {
+    padding: 25px 5px;
+    text-align: center;
+    border-bottom: 1px dashed #ccc;
+  } 
+  .order_img {
+    width: 12%;
+  }
+  .order_img img {
+    width: 100%;
+    height: auto;
+  }
+  .goods_num {
+    width: 10%;
+  }
+  .order_num {
+    width: 10%;
+  }
+  /* .order_time {
+    width: 30%;
+  } */
+  .order_state {
+    width: 10%;
+  }
+  .order_more {
+    width: 10%;
+  }
+  .order_person {
+    width: 10%;
+  }
+  .order_more a {
+    color: #333;
+  }
+  .order_more a:hover {
+    color: #ff4001;
+    cursor: pointer;
+  }
+  .goods_name {
+    width: 10%;
+  }

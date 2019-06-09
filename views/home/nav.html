@@ -1,0 +1,56 @@
+<nav class="navbar navbar-default">
+        <div class="container clear">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button
+              type="button"
+              class="navbar-toggle collapsed"
+              data-toggle="collapse"
+              data-target="#bs-example-navbar-collapse-1"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"
+              ><img id="logo" src=".\img\home\logo.png" alt="" />
+              <span>RainDowCake</span></a
+            >
+          </div>
+  
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a href="/">首页</a></li>
+              <li><a href="#">下午茶</a></li>
+              <li><a href="#">送亲子</a></li>
+              <li><a href="#">送长辈</a></li>
+              <li><a href="#">送闺蜜</a></li>
+              <li><a href="#">送恋人</a></li>
+            </ul>
+            <span class="iconfont icon-gouwuche"></span>
+            <span
+              class="iconfont icon-gerenzhongxin"
+              data-toggle="popover"
+              tabindex="0"
+              data-trigger="manual"
+              data-placement="bottom"
+              data-html="true"
+           
+            >
+            </span>
+  
+            <form class="navbar-form navbar-right" action="/sendSearch" method="get">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search" id="searchContent" name="searchContent"/>
+              </div>
+              <button type="submit" class="btn" id='search' >搜索</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right"></ul>
+          </div>
+          <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+      </nav>

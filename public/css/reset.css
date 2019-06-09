@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.clear::after {
+    display: table;
+    content: '';
+    clear: both;
+}
+a:focus, a:hover{
+    text-decoration: none;
+}
+/* 模态框 */
+.modal-content{
+    transform: translateY(200%);
+    border-radius: 0;
+    border: solid 2px #ff4001;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #ff4001; 
+    font-size: 20px;
+}

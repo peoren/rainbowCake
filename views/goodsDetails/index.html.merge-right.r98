@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/goodsDetails/iconfont.css">
+    <link rel="stylesheet" href="./css/goodsDetails/goodsDetails.css">
+    <link rel="stylesheet" href="./css/home/nav_footer.css" />
+    <link rel="stylesheet" href="./css/home/iconfont.css" />
+    <link rel="stylesheet" href="./css/home/iconfont-chat-left-right.css" />
+</head>
+
+<body>
+        <% include ../home/nav.html %>
+    <main class="details-wrap container">
+        <header class="title-bar">
+            <a href="#" class="classify" id="link_classify">商品分类</a>
+            <span class="icon">></span>
+            <span class="g-name">商品名</span>
+        </header>
+        <section class="main-msgs clear">
+            <div class="main-pic-wrap">
+                <!-- 所展示的主图 -->
+                <div class="view-pic-wrap">
+                    <img src="" alt="">
+                </div>
+                <!-- 缩略图 -->
+                <div class="thumbnail-wrap clear">
+                    <!-- <div class="thumbnail">
+                        <img src="./img/cake/chocolate/bear/sample_4.jpg" alt="">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="./img/cake/chocolate/bear/sample_3.jpg" alt="">
+                    </div>
+                    <div class="thumbnail border">
+                        <img src="./img/cake/chocolate/bear/sample_2.jpg" alt="">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="./img/cake/chocolate/bear/sample_1.jpg" alt="">
+                    </div> -->
+                </div>
+            </div>
+            <!-- 右侧商品价格及其他信息 -->
+            <div class="right-goods-msgs">
+                <h3 class="g-name"></h3>
+                <p class="g-price-wrap">￥<span class="g-price"></span></p>
+                <div class="sweetns-wrap">甜度：
+                    <p class="g-sweetns">
+                        <!-- <span class="iconfont icon-pingjiaxingxing star"></span>
+                        <span class="iconfont icon-pingjiaxingxing star"></span>
+                        <span class="iconfont icon-pingjiaxingxing"></span>
+                        <span class="iconfont icon-pingjiaxingxing"></span>
+                        <span class="iconfont icon-pingjiaxingxing"></span> -->
+                    </p>
+                </div>
+                <p class="g-size-wrap clear">
+                    <span class="size current" data-index=1>1.2磅</span>
+                    <span class="size" data-index=2>2.2磅</span>
+                    <span class="size" data-index=3>3.2磅</span>
+                    <span class="size" data-index=4>7.2磅</span>
+                </p>
+                <div class="user-sizer-wrap clear">
+                    <div>
+                        <span class="iconfont icon-tijikongjian-xianxing"></span>
+                        <span class="size-msg">27*40.5cm</span>
+                    </div>
+                    <div>
+                        <span class="iconfont icon-renqun"></span>
+                        <span class="eat-msg">适合12-15人</span>
+                    </div>
+                    <div class="three">
+                        <span class="iconfont icon-canju"></span>
+                        <span class="dinner-msg">餐具*5</span>
+                    </div>
+                    <div class="four">
+                        <span class="iconfont icon-naozhong"></span>
+                        <span>提前一天预约</span>
+                    </div>
+                    <div class="select-count-wrap">
+                        <span class="iconfont icon-jianshao"></span>
+                        <span class="count-msg">1</span>
+                        <span class="iconfont icon-jiufuqianbaoicon06"></span>
+                    </div>
+                </div>
+                <div class="buy-btn-wrap">
+                    <span id="addShoppingCar">加入购物车</span>
+                    <span id="nowBuy">立即购买</span>
+                </div>
+            </div>
+        </section>
+        <!-- 商品详情描述 -->
+        <section class="detailMsg-wrap">
+            <header class="select-them-wrap clear">
+                <div class="goods-detail them now">商品详情</div>
+                <div class="comment them">商品评价<span class="comment-numb"></span></div>
+                <div class="move-bar"></div>
+            </header>
+            <section class="msg-one">
+                <div class="detail-img-msg clear">
+                    <div class="left-msg-wrap">
+                        <p class="clear">
+                            <span class="classify-title-wrap">类别:<span class="classify" style="margin-left:5px"></span></span>
+                            <span class="taste">商品名：<span class="g-name" style="margin-left:5px"></span></span>
+                            
+                        </p>
+                        <p class="store"></p>
+                    </div>
+                    <div class="right-msg-wrap">
+                       <p class="raw-material"> 原材料：<span class="material"></span></p>
+                        <p class="peple-obj">适合人群：所有人群</p>
+                    </div>
+                </div>
+                <div class="goods-title">
+                    <p class="red-text" style="color:red">图片仅供参考，请以实物为准</p>
+                    <p class="goods-writing"></p>
+                </div>
+                <div class="pic-box">
+                    <div class="state-pic">
+                        <!-- <div class="img-wrap">
+                            <img src="./img/cake/chocolate/bear/details_1.jpg" alt="">
+                        </div>
+                        <div class="img-wrap">
+                            <img src="./img/cake/chocolate/bear/details_2.jpg" alt="">
+                        </div>
+                        <div class="img-wrap">
+                            <img src="./img/cake/chocolate/bear/details_3.jpg" alt="">
+                        </div> -->
+                    </div>
+                    <div class="img-wrap">
+                        <img src="./img/cake/size.jpg" alt="">
+                    </div>
+                </div>
+                <div class="district clear">
+                    <span class="chengdu">成都</span>
+                    <span>珠江路.大马寺路以东，天府五街以北，新下街以西及成都绕城高速内免费配送，其它区域暂不支持配送</span>
+                </div>
+            </section>
+            <section class="msg-two">
+                <div class="msg-flat">
+                    
+                </div>
+                <div class="pageing-wrpa">
+                    <span class="left" title="上一页">上一页</span><span class="pageing-count"></span><span class="right" title="下一页">&gt;</span>
+                </div>
+            </section>
+        </section>
+        <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+            <div class="modal-dialog modal-sm" role="document">
+              <div class="modal-content">
+               已成功加入购物车
+              </div>
+            </div>
+          </div>
+    </main>
+    <% include ../home/footer.html %>
+    <script>
+        var getGoods_id='<%=id%>';
+    </script>
+    <script src="./libs/jquery-3.3.1.min.js"></script>
+    <script src="./libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./js/details/details.js"></script>
+    <script src=".\js\home\home.js"></script>
+</body>
+
+</html>

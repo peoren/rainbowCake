@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/order/lineitem.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/home/iconfont.css" />
+    <link rel="stylesheet" href="./css/home/nav_footer.css" />
+
+    <link rel="stylesheet" href="./css/home/iconfont-chat-left-right.css" />
+    <title>订单详情</title>
+</head>
+<body>
+        <% include ../home/nav.html %>
+
+    <section class="container line_order clear">
+        <!-- <div >
+            <h4>商品信息</h4>
+            <div class="order">
+                    <table>
+                        <thead>
+                                <tr>
+                                        <th>
+                                            商品图
+                                        </th>
+                                        <th>
+                                            商品信息
+                                        </th>
+                                        <th>
+                                           规格
+                                        </th>
+                                        <th>
+                                            单价
+                                        </th>
+                                        <th>
+                                           数量
+                                        </th>
+                                        <th>
+                                           优惠方式
+                                        </th>
+                                        <th>
+                                           总金额(元)
+                                        </th>
+                                       
+                                    </tr>
+                        </thead>
+                    <tbody>
+                        <tr>
+                            <td class='order_img'>
+                                <img src="${ele.goods_pic_main}">
+                            </td>
+                            <td index=${ele.shoppingcart_id} class='goods_name'>
+                                ${ele.goods_name}
+                            </td>
+                            <td class='order_num' index ='${ele.order_id}'>
+                               ${ele.size_name}
+                            </td>
+                            <td class='order_address'>
+                               ${ele.goods_price}
+                            </td>
+                            <td class='order_person'>
+                               ${ele.order_amount }
+                            </td>
+                            <td class='order_time'>
+                                暂无活动
+                            </td>
+                            <td class='order_state' id='paym'>
+                              ${Number(ele.order_amount) * Number(ele.goods_price)}
+                            </td>
+                            
+                        </tr>
+                   
+                        
+                    </tbody>
+                        
+           
+            </table>
+        </div>
+                
+        <div class="container left clear" id="buyer">
+            <h4 id="h-buyer">买家信息</h4>
+            <hr>
+            <div class="clear">
+                <div class="left b-left" ><span>收货人：</span></div>
+                <div class="left b-right" ><span>成某人</span></div>
+            </div>
+            <div class="clear">
+                    <div class="left b-left" ><span>收货地址：</span></div>
+                    <div class="left b-right" ><span>成都市高新区天府二街云华路333号四栋一楼22号</span></div>
+            </div>
+            <div class="clear">
+                    <div class="left b-left" ><span>买家留言：</span></div>
+                    <div class="left b-right" ><span>无</span></div>
+            </div>
+
+            <div class="clear">
+                    <div class="left b-left" ><span>订单编号：</span></div>
+                    <div class="left b-right" ><span>34546874635489</span></div>
+            </div>
+            <div class="clear">
+                    <div class="left b-left" ><span>联系电话：</span></div>
+                    <div class="left b-right" ><span>157****1427</span></div>
+            </div>
+            <div class="clear">
+                <div class="left b-left" ><span>期望时间：</span></div>
+                <div class="left b-right" ><span>2019-4-8-12：00</span></div>
+            </div>
+           
+        
+        </div>
+        <div class="clear  left"  id="o-state">
+            <h3>订单状态</h3>
+            <div class="left" id="o-img">
+                <img src="../../public/img/order/order.png" alt="">
+            </div>
+            <div class="right" id="info">
+                <div class="clear o-box"  >
+                    <div class="left o-left"><span>订单状态：</span></div>
+                    <div  class="left o-right"><span>未完成</span></div>
+                </div>
+                <div class="clear o-box" >
+                    <div class="left o-left"><span>配送人员：</span></div>
+                    <div  class="left o-right"><span>陈某</span></div>
+                </div>
+                <div class="clear o-box" >
+                    <div class="left o-left"><span>联系电话：</span></div>
+                    <div  class="left o-right"><span>15454678742</span></div>
+                </div>
+
+            </div>
+            <div id="skip" style="margin-top: 40px;" class="clear">
+                <div class="left o-left"><span>您可以选择：</span></div>
+                <div  class="left o-right"><a href="">评论</a></div>
+            </div>
+            
+        </div> -->
+    </section>
+    <section class="container" id="price">
+        <div id="balance">
+            <div class="clear">
+                    <div class="right">
+                            <p class="clear">商品总计：<span class="right">￥ <span id="order_price"></span> 元</span></p>
+                            <p class="clear">优惠方式：<span class="right order_time"></span></p>
+                            
+                            <p class="clear " id="inAll" style=" color: black;">实付金额：<span class="right">￥ <span id="total"></span> 元</span></p>
+                    </div>
+            </div>
+        </div>
+    </section>
+    
+    <% include ../home/footer.html %>           
+    <script src="./libs/jquery-3.3.1.min.js"></script>
+    <script src="./libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./js/oder/lineitem.js"></script>
+    <script src=".\js\home\home.js"></script>  
+</body>
+</html>

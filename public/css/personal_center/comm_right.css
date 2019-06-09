@@ -1,0 +1,433 @@
+/* 头像部分 */
+.modu {
+    height: 100%;
+    overflow: hidden;
+}
+.head_img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.head_img img {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+.head {
+    float: left;
+    width: 30%;
+    overflow: hidden;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+    box-sizing: border-box;
+    padding-left: 10%;
+    height: 319px;
+}
+.head_hint {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    height: 20px;
+    overflow: hidden;
+}
+.time {
+    margin-top: 10px;
+    color: #666;
+    font-size: 12px;
+}
+.headDay {
+    margin-right: 10px;
+}
+/* vip */
+.vip_img {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 3px solid #aaa;
+    margin: 0 auto;
+}
+.vip_img img {
+    width: 35px;
+    height: 35px;
+}
+.vip_hint {
+    margin-top: 10px;
+}
+.vip_hint,
+.vip_time {
+    color: #aaa;
+    font-size: 12px;
+    margin-bottom: 0
+}
+/* 上半部分 */
+.top {
+    overflow: hidden;
+    transform-origin: top;
+    transition: all .5s;
+    margin-top: 30px;
+}
+.show {
+    float: left;
+    cursor: pointer;
+    user-select: none;
+    font-weight: bold;
+    font-size: 14px;
+    height: 20px;
+    line-height: 20px;
+}
+.arr {
+    width: 12px;
+    height: 12px;
+    vertical-align: middle;
+    float: left;
+    margin-top: 4px;
+    margin-right: 4px;
+}
+.myVip {
+    overflow: hidden;
+}
+/* 订单 */
+.order_head {
+    font-weight: bold;
+    height: 20px;
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+.order_head::before {
+    display: block;
+    content: '';
+    width: 3px;
+    height: 16px;
+    background-color: #ff4001;
+    float: left;
+    margin-top: 2px;
+    margin-right: 5px;
+}
+.order {
+    margin-top: 20px;
+    float: left;
+    width: 100%;
+    font-weight: bold;
+}
+.order table th {
+    padding: 25px 5px;
+    text-align: center;
+}
+.order table td {
+    padding: 25px 5px;
+    text-align: center;
+    border-bottom: 1px dashed #ccc;
+} 
+.order_img {
+    width: 10%;
+}
+.order_img img {
+    width: 100%;
+    height: auto;
+}
+.goods_num {
+    width: 10%;
+}
+.order_num {
+    width: 10%;
+}
+.order_time {
+    width: 20%;
+}
+.order_state {
+    width: 10%;
+}
+.order_more {
+    width: 10%;
+}
+.order_person {
+    width: 10%;
+}
+.order_more a {
+    color: #333;
+}
+.order_more a:hover {
+    color: #ff4001;
+    cursor: pointer;
+}
+.goods_name {
+    width: 10%;
+}
+.goods_name span {
+    cursor: pointer;
+}
+.goods_name span:hover {
+    text-decoration: underline;
+}
+.crit {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 3px 10px;
+    background-color: #ff4001;
+    color: white;
+    cursor: pointer;
+}
+.hasCrit {
+    background-color: #aaa;
+}
+.stateP {
+    margin-bottom: 0;
+}
+
+
+/* 日历 */
+.schedule {
+    float: right;
+    width: 70%;
+}
+#schedule-box{
+    width: 320px;
+    margin: 0 auto;
+    font-size: 13px;
+}
+.schedule-hd{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+.today{
+    flex: 1;
+    text-align: center;
+    height: 25px;
+    line-height: 25px;
+}
+.ul-box{
+    overflow: hidden;
+}
+.ul-box > li{
+    float: left;
+    width: 14.28%;
+    text-align: center;
+    padding: 5px 0;
+}
+.other-month{
+    color: #999999;
+}
+.current-month{
+    color: #333333;
+}
+.today-style{
+    border-radius: 50%;
+    background: #58d321;
+}
+.arrow{
+    cursor: pointer;
+}
+.dayStyle{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 25px;
+    cursor: pointer;
+}
+.current-month > .dayStyle:hover{
+    background: #00BDFF;
+    color: #ffffff;
+}
+.today-flag{
+    background: #00C2B1;
+    color: #fff;
+}
+.boxshaw{
+    box-shadow: 2px 2px 15px 2px #e3e3e3;
+}
+.selected-style {
+    background: #00BDFF;
+    color: #ffffff;
+}
+#h3Ele{
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* 充值vip */
+.module {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    background-color: rgba(0,0,0,0.5);
+    transition: all .5s;
+    opacity: 0;
+}
+.pay_div {
+    width: 400px;
+    height: 500px;
+    background-color: #eee;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 50px;
+    transform: translateY(-50px);
+    box-shadow: 5px 5px 5px #333;
+    transition: all .5s;
+}
+.pay_p span{
+    float: left;
+    background: #aaa;
+    color: #fff;
+    box-sizing: border-box;
+    border: 2px solid #fff;
+    padding: 15px 0;
+    width: 50%;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: left;
+    font-size: 16px;
+    line-height: 20px;
+}
+.pay_p .method {
+    background: #ff4001;
+    color: #fff;
+}
+.pay_p .vx::before {
+    float: left;
+    content: '';
+    height: 20px;
+    width: 20px;
+    background: url('../../img/personal_center/vx.png') no-repeat center center;
+    background-size: 20px;
+    margin-right: 5px;
+    margin-left: 50px;
+}
+.pay_p .zfb::before {
+    float: left;
+    content: '';
+    height: 20px;
+    width: 20px;
+    background: url('../../img/personal_center/zfb.png') no-repeat center center;
+    background-size: 20px;
+    margin-right: 5px;
+    margin-left: 50px;
+}
+.pay_30,
+.pay_90 {
+    float: left;
+    width: 170px;
+    box-sizing: border-box;
+    padding: 25px 20px;
+    margin-top: 30px;
+    border: 2px solid #bbb;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    line-height: 24px;
+}
+.pay_30 {
+    margin-left: 20px;
+}
+.pay_90 {
+    float: right;
+    margin-right: 20px;
+}
+.pay_sure {
+    border: 2px solid red;
+    background: #fff1ea;
+}
+.pay_30 span:nth-child(1),
+.pay_90 span:nth-child(1) {
+    float: left;
+    color: red;
+    font-size: 24px;
+}
+.pay_30 span:nth-child(2),
+.pay_90 span:nth-child(2) {
+    float: right;
+}
+.pay_qr {
+    width: 200px;
+    height: 200px;
+    background: url('../../img/personal_center/vx_qr.jpg') no-repeat center;
+    background-size: cover;
+    float: left;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+.pay_finish {
+    float: left;
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 50px;
+    margin-top: 20px;
+    background: #ff4001;
+    color: white;
+    line-height: 50px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* 分页 */
+.page {
+    float: left;
+    height: 30px;
+    line-height: 20px;
+    margin-top: 35px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+.page p,input{
+    float: left;
+}
+.page p {
+    line-height: 30px;
+    margin: 0 10px;
+    font-size: 16px;
+}
+.page input[type='button'] {
+    line-height: 20px;
+    padding: 5px 10px;
+    background-color: #ff4001;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-size: 14px;
+}   
+body .page .to {
+    background: #aaa;
+}
+.page input[type='text'] {
+    width: 50px;
+    height: 30px;
+    margin-left: 35px;
+    border: 1px solid #aaa;
+    margin-right: 10px;
+    font-size: 16px;
+    padding-left: 5px;
+}
+
+/* 响应式 */
+@media(max-width:777px) {
+    .head {
+        width: 100%;
+        padding-left: 0;
+    }
+    .schedule {
+        width: 100%;
+    }
+    .order table th {
+        padding:5px 0;
+    }
+    .order table td {
+        padding: 5px 0;
+    } 
+}

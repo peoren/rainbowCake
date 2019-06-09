@@ -1,0 +1,190 @@
+/* 头部 */
+.data_head {
+    font-weight: bold;
+    height: 20px;
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+.data_head::before {
+    display: block;
+    content: '';
+    width: 3px;
+    height: 16px;
+    background-color: #ff4001;
+    float: left;
+    margin-top: 2px;
+    margin-right: 5px;
+}
+
+/* 收货地址div */
+.add_div {
+    font-weight: bold; 
+    float: left;
+    width: 240px;
+    border: 2px solid #aaa;
+    border-radius: 5px;
+    padding: 8px;
+    margin-left: 50px;
+    margin-bottom: 30px;
+    height: 134px;
+    opacity: 0.6;
+}
+.name_p {
+    border-bottom: 2px solid #aaa;
+    font-size: 16px;
+}
+.add_phone {
+    float: right;
+}
+.add_p {
+    font-size: 12px;
+    height: 34px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+.edit_a {
+    color: #333;
+    font-size: 12px;
+    text-decoration: underline;
+}
+.edit_a:hover {
+    color: #333;
+    text-decoration: underline;
+}
+.delete {
+    width: 20px;
+    height: 20px;
+    float: right;
+    cursor: pointer;
+}
+/* 不是默认地址 */
+.add_isDefa {
+    font-size: 12px;
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 5px;
+    color: white;
+    font-weight: normal;
+    border-radius: 3px;
+    margin-left: 5px;
+    cursor: default;
+    background-color: #aaa;
+    cursor: pointer;
+}
+/* 是默认地址(可添加移除) */
+.add_defa {
+    background-color: #ff4001;
+}
+/* 添加地址 */
+.add_add {
+    border: 2px dashed #aaa;
+    position: relative;
+}
+.add_addP {
+    height: 20px;
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 49px;
+    cursor: pointer;
+    float: left;
+    width: 110px;
+    margin-left: 55px;
+}
+.add_addP::before {
+    float: left;
+    display: block;
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url('../../img/personal_center/add.png') no-repeat left center;
+    background-size: 20px;
+    margin-right: 10px;
+}
+/* 新增地址 */
+.add_botDiv {
+    float: left;
+    width: 100%;
+}
+input[type='text'] {
+    height: 30px;
+    padding-left: 5px;
+    width: 300px;
+}
+.data_hint {
+    margin-right: 20px;
+    font-size: 16px;
+    margin-left: 50px;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+}
+.data_div {
+    float: left;
+    margin-bottom: 30px;
+}
+.data_div {
+    width: 100%;
+}
+/* 单位地址 */
+.form-controls {
+    width: 120px;
+    float: left;
+    margin-right: 10px;
+    height: 30px;
+}
+.img_yes,
+.img_no {
+    float: left;
+    width: 16px;
+    height: 16px;
+    margin-top: 7px;
+}
+.p_yes,
+.p_no {
+    cursor: pointer;
+    float: left;
+}
+.lab_yes,
+.lab_no {
+    line-height: 30px;
+    float: left;
+    margin-right: 20px;
+    padding-left: 5px;
+}
+/* 错误 */
+.name_err,
+.phone_err,
+.more_err {
+    line-height: 30px;
+    color: red;
+    margin-left: 10px;
+    display: none;
+    font-size: 16px;
+}
+/* 保存按钮 */
+.bot_button {
+    padding: 5px 15px;
+    margin-left: 30px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    outline: none;
+    background-color: #ff4001;
+    float: left;
+}
+.box {
+    display: none;
+}
+/* 响应式 */
+@media(max-width: 777px) {
+    .add_div {
+        margin-left: 0;
+    }
+    input[type='text'] {
+        width: 50%;
+    }
+    .data_hint {
+        margin-left: 0;
+    }
+}

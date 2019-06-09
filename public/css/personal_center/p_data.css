@@ -1,0 +1,220 @@
+
+/* 所有字体加粗 */
+.main_right {
+    font-weight: bold;
+}
+
+/* 头部 */
+.data_head {
+    font-weight: bold;
+    height: 20px;
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+.data_head::before {
+    display: block;
+    content: '';
+    width: 3px;
+    height: 16px;
+    background-color: #ff4001;
+    float: left;
+    margin-top: 2px;
+    margin-right: 5px;
+}
+/* 头像 */
+.data_hint {
+    float: left;
+    width: 100px;
+    text-align: right;
+    margin-right: 20px;
+    margin-bottom: 40px;
+}
+.data_img {
+    width: 100px;
+    height: 100px;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    background: url('../../img/personal_center/uploads/a.jpg') no-repeat center;
+    background-size: cover;
+}
+.data_img img {
+    width: 100%;
+    height: auto;
+}
+.head_hint {
+    line-height: 100px;
+}
+.head_module {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    line-height: 100px;
+    text-align: center;
+    transform: translateY(100px);
+    transition: all .3s;
+}
+.data_img:hover .head_module {
+    transform: translateY(0);
+}
+.file {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100;
+    width: 100%;
+    opacity: 0;
+}
+/* 基本资料 */
+input[type='text'] {
+    height: 30px;
+    padding-left: 5px;
+    width: 300px;
+}
+.inp_hint {
+    line-height: 30px;
+}
+.sex_man,
+.sex_woman {
+    line-height: 30px;
+    float: left;
+    margin-right: 20px;
+    padding-left: 5px;
+}
+.img_man,
+.img_woman {
+    float: left;
+    width: 16px;
+    height: 16px;
+    margin-top: 7px;
+}
+.p_man,
+.p_woman {
+    cursor: pointer;
+}
+.data_phone,
+.data_regis {
+    outline: none;
+    border: none;
+}
+.phone_p {
+    font-size: 12px;
+    color: #aaa;
+    margin-top: 10px;
+}
+.name_err {
+    margin-left: 10px;
+    color: red;
+    line-height: 30px;
+    display: none;
+}
+/* 基本资料提交按钮 */
+.top_button {
+    padding: 5px 15px;
+    margin-left: 30px;
+    margin-top: 30px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    outline: none;
+    background-color: #ff4001;
+}
+
+/* 更多信息 */
+.data_more {
+    margin-top: 35px;
+}
+/* 生日 */
+.data_hin {
+    float: left;
+    line-height: 30px;
+    margin-right: 10px;
+}
+.inp_birth {
+    margin-bottom: 10px;
+}
+.birth_hint {
+    float: left;
+    color: red;
+    width: 100%;
+    margin-bottom: 40px;
+    margin-left: 80px;
+}
+/* 婚恋状况 */
+.img_single,
+.img_inLove,
+.img_married {
+    float: left;
+    width: 16px;
+    height: 16px;
+    margin-top: 7px;
+    line-height: 30px;
+}
+.p_single,
+.p_inLove,
+.p_married {
+    cursor: pointer;
+}
+/* 工作职位 */
+.data_job {
+    height: 30px;
+    width: 120px;
+    padding-left: 5px;
+}
+/* 单位地址 */
+.form-controls {
+    width: 120px;
+    float: left;
+    margin-right: 10px;
+    height: 30px;
+}
+/* 更多资料提交按钮 */
+.bot_button {
+    padding: 5px 15px;
+    margin-left: 30px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    outline: none;
+    background-color: #ff4001;
+}
+
+/* canvas验证码 */
+.data_div .data_canvas {
+    width: 150px;
+    float: left;
+}
+#canvas {
+    margin-top: 20px;
+}
+.cvs_btn {
+    width: 50px;
+    height: 30px;
+    margin-left: 10px;
+    background-color: #aaa;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+.yzm {
+    color: #aaa;
+}
+@media(max-width:777px) {
+    input[type='text'] {
+        width: 50%;
+    }
+    .data_div .data_canvas {
+        width: 50%;
+    }
+    .data_hint {
+        width: 20%;
+    }
+    .birth_hint {
+        margin-left: 0;
+    }
+}
